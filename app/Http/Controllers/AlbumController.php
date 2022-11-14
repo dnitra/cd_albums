@@ -9,9 +9,10 @@ class AlbumController extends Controller
 {
     //
 
-    public function index(){
+    public function show()
+    {
 
         $albums = Album::get();
-        return view("index",compact("album"));
+        return view("index", compact("albums"));
     }
 }

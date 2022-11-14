@@ -14,4 +14,4 @@ use App\Http\Controllers\AlbumController;
 |
 */
 
-Route::get('/', [AlbumController::class, "index"]);
+Route::get('/', [AlbumController::class, "show"]);

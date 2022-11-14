@@ -15,13 +15,13 @@ return new class extends Migration
     {
         Schema::create('albums', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger("genre_id")->nullable();
+            $table->unsignedBigInteger("interpreter_id")->nullable();
             $table->string("title", 50);
-            $table->string("interpreter", 50);
-            $table->string("img_url", 3000);
-            $table->string("genre", 50);
-            $table->integer("year_released");
-            $table->integer("price");
-            $table->integer("rating");
+            $table->string("img_url", 3000)->nullable();
+            $table->integer("year_released")->nullable();
+            $table->integer("price")->nullable();
+            $table->integer("rating")->nullable();
             $table->timestamps();
         });
     }
