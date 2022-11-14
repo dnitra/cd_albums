@@ -9,10 +9,22 @@ class AlbumController extends Controller
 {
     //
 
-    public function show()
+    public function index()
     {
 
-        $albums = Album::get();
+        $albums = Album::paginate(15);
+
         return view("index", compact("albums"));
+    }
+
+    public function show($id)
+    {
+
+        $detail = Album::where("id", $id)
+            ->get();
+
+         
+
+        return view("detail", compact("detail"));
     }
 }
