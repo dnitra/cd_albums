@@ -19,11 +19,11 @@ class AlbumFactory extends Factory
     public function definition()
     {
         return [
-            'title' => fake()->text($maxNbChars = 30),
+            'title' => fake()->realText($maxNbChars = 30),
             "genre_id" => (fake()->randomDigit()) + 1,
-            "img_url" => fake()->imageUrl($width = 640, $height = 480),
+            "img_url" => fake()->imageUrl($width=600, $height=400, "music"),
             "year_released" => fake()->year($max = now()),
-            "price" => fake()->randomNumber(5),
+            "price" => fake()->randomNumber(4),
             "rating" => (fake()->randomDigit()) + 1,
         ];
     }
