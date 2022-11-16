@@ -20,11 +20,10 @@ class AlbumController extends Controller
     public function show($id)
     {
 
-        $detail = Album::where("id", $id)
-            ->get();
+        $album = Album::findOrFail($id);
 
-         
 
-        return view("detail", compact("detail"));
+
+        return view("detail", compact("album"));
     }
 }

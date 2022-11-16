@@ -7,34 +7,38 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Album detail</title>
 
-    <link href="{{ mix('/css/app.css') }}" rel="stylesheet" />
-    <script src="{{ mix('/js/app.js') }}" defer></script>
     @vite('resources/css/app.scss')
-
+    @vite('resources/js/app.js')
 </head>
 
 <body>
-    <a href="{{ url()->previous() }}">Go back</a>
+    <header class="album-header">
+        <nav>
+            <a href="{{ action('AlbumController@index') }}">Home</a>
+        </nav>
+    </header>
     <div class="album-detail">
-        <h1>{{ $detail[0]->title }}</h1>
+        <h1>{{ $album->title }}</h1>
         <div class="album-detail__content">
 
-            <img src="{{ $detail[0]->img_url }}" alt="{{ $detail[0]->title }}">
+            <img src="{{ $album->img_url }}" alt="{{ $album->title }}">
             <div class="album-detail__info">
                 <div>
-                    <h2>Interpreter: </h2><span>{{ $detail[0]->interpreter->name }}</span>
+                    <h2>Interpreter: </h2>
+                    <span>{{ $album->interpreter->name }}</span>
                 </div>
                 <div>
-                    <h2>Rating: </h2><span>{{ $detail[0]->rating }}/10</span>
+                    <h2>Rating: </h2>
+                    <span>{{ $album->rating }}/10</span>
                 </div>
                 <div>
-                    <h2>Genre: </h2><span>{{ $detail[0]->genre->name }}</span>
+                    <h2>Genre: </h2><span>{{ $album->genre->name }}</span>
                 </div>
                 <div>
-                    <h2>Year released: </h2><span>{{ $detail[0]->year_released }}</span>
+                    <h2>Year released: </h2><span>{{ $album->year_released }}</span>
                 </div>
                 <div>
-                    <h2>Price:</h2> <span>{{ $detail[0]->price }} CZK</span>
+                    <h2>Price:</h2> <span>{{ $album->price }} CZK</span>
                 </div>
                 <button class="album-detail__print-button" onclick=window.print()>Print</button>
             </div>
