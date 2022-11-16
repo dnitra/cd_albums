@@ -15,4 +15,5 @@ use App\Http\Controllers\AlbumController;
 */
 
 Route::get('/', [AlbumController::class, "index"]);
-Route::get('/album/{id}', [AlbumController::class, "show"]);
+Route::get('/album/{id}', [AlbumController::class, "showAlbumDetail"]);
+Route::post('/filter', [AlbumController::class, "filterAlbums"]);

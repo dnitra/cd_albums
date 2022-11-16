@@ -1,7 +1,16 @@
-const printButton = document.querySelector("#print");
+const titles = document.querySelector(".cd-albums__list");
+const listOfTitles = titles.querySelectorAll("li");
 
-// printButton.addEventListener("click", () => {
-//     window.print();
-// });
+listOfTitles.forEach((title) =>
+    title.addEventListener("mouseover", (e) => {
+        e.target.classList.add("scale");
+    })
+);
 
-console.log("test");
+listOfTitles.forEach((title) =>
+    title.addEventListener("mouseleave", (e) => {
+        e.target.classList.remove("scale");
+    })
+);
+
+console.log(listOfTitles);

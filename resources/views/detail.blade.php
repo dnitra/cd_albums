@@ -8,7 +8,6 @@
     <title>Album detail</title>
 
     @vite('resources/css/app.scss')
-    @vite('resources/js/app.js')
 </head>
 
 <body>

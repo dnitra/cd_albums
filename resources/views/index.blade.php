@@ -17,11 +17,21 @@
 
     <h2>List of albums:</h2>
     @if (isset($albums))
+
+        <div class="filters">
+            <form action="/filter" method="post">
+                @csrf
+                <label for="string">Search by album's title:</label>
+                <input name="string" type="text" id="string">
+                <button type="submit">Search</button>
+            </form>
+
+        </div>
         <ul class="cd-albums__list">
 
 
             @foreach ($albums as $album)
-                <a href="{{ action('AlbumController@show', $album->id) }}">
+                <a href="{{ action('AlbumController@showAlbumDetail', $album->id) }}">
                     <li>{{ $album->title }}</li>
                 </a>
             @endforeach
